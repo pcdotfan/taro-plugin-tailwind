@@ -1,0 +1,49 @@
+{
+    "name": "taro-plugin-tailwind",
+    "version": "1.0.0",
+    "main": "index.js",
+    "bin": {
+        "init": "./init.js"
+    },
+    "scripts": {
+        "build": "npm run clean && npm run prod",
+        "dev": "tsc -w",
+        "prod": "tsc",
+        "clean": "rimraf dist"
+    },
+    "files": [
+        "src",
+        "dist",
+        "index.js",
+        "package.json"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pcdotfan/taro-plugin-tailwind.git"
+    },
+    "author": "pcdotfan",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/pcdotfan/taro-plugin-tailwind/issues"
+    },
+    "homepage": "https://github.com/pcdotfan/taro-plugin-tailwind#readme",
+    "devDependencies": {
+        "@tarojs/service": "^3.0.17",
+        "@types/node": "^14.14.9",
+        "colors": "^1.4.0",
+        "postcss": "^8",
+        "postcss-css-variables": "^0.17.0",
+        "postcss-discard-empty": "^4.0.1",
+        "postcss-import": "^13.0.0",
+        "postcss-jsx": "^0.36.4",
+        "postcss-loader": "^4.1.0",
+        "postcss-preset-env": "^6.7.0",
+        "postcss-syntax": "^0.36.2",
+        "postcss-unprefix": "^2.1.4",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.1.2"
+    },
+    "dependencies": {
+        "tailwindcss": "^2.0.1"
+    }
+}
