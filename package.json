@@ -6,6 +6,7 @@
         "init": "./init.js"
     },
     "scripts": {
+        "init": "node node_modules/.bin/init",
         "build": "npm run clean && npm run prod",
         "dev": "tsc -w",
         "prod": "tsc",
@@ -29,8 +30,13 @@
     "homepage": "https://github.com/pcdotfan/taro-plugin-tailwind#readme",
     "devDependencies": {
         "@tarojs/service": "^3.0.17",
+        "@tarojs/taro": "^3.0.5",
+        "@types/fs-extra": "^8.0.0",
+        "@types/glob": "^7.1.1",
+        "@types/mkdirp": "^0.5.2",
+        "@types/webpack": "^4.41.21",
+        "@types/webpack-dev-server": "^3.11.0",
         "@types/node": "^14.14.9",
-        "colors": "^1.4.0",
         "postcss": "^8",
         "postcss-css-variables": "^0.17.0",
         "postcss-discard-empty": "^4.0.1",

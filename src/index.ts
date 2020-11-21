@@ -1,26 +1,35 @@
 import { IPluginContext } from '@tarojs/service';
-import { HIDDEN_CONFIG_PATH, SUPPORTED_MINI_PLATFORMS, SUPPORTED_PLATFORMS } from './constant';
+import {
+    CURRENT_PLATFORM,
+    HIDDEN_CONFIG_PATH,
+    SUPPORTED_MINI_PLATFORMS,
+    SUPPORTED_PLATFORMS,
+} from './constant';
 import path from 'path';
 import fs from 'fs';
+import registerInitCommand from './init';
 
 interface ITaroPluginTailwindOptions {
     test?: RegExp;
 }
 
-const getConfigPath = platform => {
-    const filePath = `${HIDDEN_CONFIG_PATH}/${platform}.config.js`;
-    const targetFile = path.resolve(filePath);
-    return fs.existsSync(targetFile) ? filePath : getConfigPath('mini');
-};
+const getConfigPath = platform => `${HIDDEN_CONFIG_PATH}/${platform}.config.js`;
+const checkPlatformConfigExists = platform => fs.existsSync(path.resolve(getConfigPath(platform)));
 
 export default (
     ctx: IPluginContext,
     { test = /\/src\/tailwind\.src\.css$/ }: ITaroPluginTailwindOptions
 ) => {
-    const currentPlatform = process.env.TARO_ENV || 'unsupported';
-    if (!SUPPORTED_PLATFORMS.includes(currentPlatform)) {
+    registerInitCommand(ctx);
+    if (!SUPPORTED_PLATFORMS.includes(CURRENT_PLATFORM)) {
         ctx.helper.chalk.yellowBright(
-            `⚠️ [taro-plugin-tailwind]: Platform ${currentPlatform} is not supported, auto skipping...`
+            `⚠️ [taro-plugin-tailwind]: platform ${CURRENT_PLATFORM} is not supported, auto skipping...`
+        );
+        return;
+    }
+    if (!['h5', 'mini'].some(platform => checkPlatformConfigExists(platform))) {
+        ctx.helper.chalk.yellowBright(
+            `⚠️ [taro-plugin-tailwind]: required config (h5.config.js / mini.config.js) is missing, auto skipping...`
         );
         return;
     }
@@ -28,7 +37,14 @@ export default (
         mini: {
             plugins: [
                 ['postcss-import', {}],
-                ['tailwindcss', { config: getConfigPath(currentPlatform) }],
+                [
+                    'tailwindcss',
+                    {
+                        config: getConfigPath(
+                            checkPlatformConfigExists(CURRENT_PLATFORM) ? CURRENT_PLATFORM : 'mini'
+                        ),
+                    },
+                ],
                 ['postcss-discard-empty', {}],
                 ['postcss-unprefix', {}],
                 ['postcss-css-variables', {}],
@@ -55,7 +71,7 @@ export default (
                                 options: {
                                     postcssOptions:
                                         postcssConfig[
-                                            SUPPORTED_MINI_PLATFORMS.includes(currentPlatform)
+                                            SUPPORTED_MINI_PLATFORMS.includes(CURRENT_PLATFORM)
                                                 ? 'mini'
                                                 : 'h5'
                                         ],
