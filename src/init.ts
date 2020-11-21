@@ -1,42 +1,41 @@
 #!/usr/bin/env node
 
-import path from 'path';
-import fs from 'fs';
-import fse from 'fs-extra';
-import { HIDDEN_CONFIG_PATH } from './constant';
 import { IPluginContext } from '@tarojs/service';
+import { HIDDEN_CONFIG_PATH } from './constant';
+
+const fs = require('fs-extra');
+const path = require('path');
 
 export default (ctx: IPluginContext) => {
-    ctx.registerCommand({
-        name: 'tailwind',
-        optionsMap: {
-            '--init': '生成必要的配置文件和 tailwind.src.css 文件',
-        },
-        synopsisList: ['taro tailwind --init', 'taro tailwind --init weapp,dd,tt,swan'],
-        async fn() {
-            const { init } = ctx.runOpts;
-            let generatePlatforms: string[] = ['mini', 'h5'];
-
-            if (init && typeof init === 'string' && init.trim()) {
-                generatePlatforms = init.split(',');
-            }
-
-            generatePlatforms.map(platform => {
-                const targetFile = path.resolve(`${HIDDEN_CONFIG_PATH}/${platform}.config.js`);
-                if (fs.existsSync(targetFile)) {
-                    ctx.helper.chalk.redBright(
-                        `⚠️ [taro-plugin-tailwind] File ${HIDDEN_CONFIG_PATH}/${platform}.config.js exists!`
-                    );
-                } else {
-                    fse.copySync(
-                        path.join(__dirname, `../config/${platform}.config.js`),
-                        targetFile
-                    );
-                    ctx.helper.chalk.greenBright(
-                        `[taro-plugin-tailwind] File ${HIDDEN_CONFIG_PATH}/${platform}.config.js has been created.`
-                    );
-                }
-            });
-        },
-    });
+  ctx.registerCommand({
+    name: 'tailwind',
+    optionsMap: {
+      '--init': 'generates necessary configs and tailwind.src.css',
+    },
+    synopsisList: ['taro tailwind --init', 'taro tailwind --init weapp,dd,tt,swan'],
+    fn() {
+      const {
+        options: { init },
+      } = ctx.runOpts;
+      const defaultConfig = path.join(__dirname, `../config/mini.config.js`);
+      let generatePlatforms = ['mini', 'h5'];
+      if (init && typeof init === 'string' && init.trim()) {
+        generatePlatforms = init.split(',');
+      }
+      generatePlatforms.map((platform) => {
+        const filePath = `${HIDDEN_CONFIG_PATH}/${platform}.config.js`;
+        const targetFile = path.resolve(filePath);
+        if (fs.existsSync(targetFile)) {
+          console.log(ctx.helper.chalk.redBright(`⚠️ [taro-plugin-tailwind] File ${filePath} exists!`));
+        } else {
+          if (fs.existsSync(path.join(__dirname, `../config/${platform}.config.js`))) {
+            fs.copySync(path.join(__dirname, `../config/${platform}.config.js`), targetFile);
+          } else {
+            fs.copySync(defaultConfig, targetFile);
+          }
+          console.log(ctx.helper.chalk.greenBright(`[taro-plugin-tailwind] File ${filePath} has been created.`));
+        }
+      });
+    },
+  });
 };
