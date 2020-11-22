@@ -20,13 +20,12 @@ $ npm i taro-plugin-tailwind --save
 
 ```js
 const config = {
-  ...
+  /// ...
   plugins: [
-    ...其余插件
-
+    // ...其余插件
     'taro-plugin-tailwind'
   ]
-  ...
+  /// ...
 }
 ```
 
@@ -43,8 +42,27 @@ $ taro tailwind --init weapp,tt,swan // 生成其它平台以 (,) 分隔
 
 ### 参数
 
-插件可以接受如下参数：
+插件接受如下参数：
 
 | 参数项 | 类型 | 是否可选 | 用途 |
 | :-----| :---- | :---- | :---- |
 | test | RegExp | 是 | `postcss-loader` 的 `Rule.test`，默认值： `/\/src\/tailwind\.src\.css$/`  |
+
+### 注意事项
+
+#### 小程序
+
+小程序不支持使用反斜杠和冒号作为类名，因此默认配置文件 `mini.config.js` 中，反斜杠修改成使用下划线 `_`（参考 [taro-tailwind](https://github.com/windedge/taro-tailwind)）
+
+```jsx
+<View className='w-1/3'></View>
+```
+
+应该写成:
+
+```jsx
+<View className='w-1_3'></View>
+```
+
+并且 `preflight` 选项应该始终保持关闭，不加载 [modern-normalize](https://github.com/sindresorhus/modern-normalize)。
+...
