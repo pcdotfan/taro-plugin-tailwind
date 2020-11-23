@@ -65,4 +65,3 @@ $ taro tailwind --init weapp,tt,swan // 生成其它平台以 (,) 分隔
 ```
 
 并且 `preflight` 选项应该始终保持关闭，不加载 [modern-normalize](https://github.com/sindresorhus/modern-normalize)。
-...
