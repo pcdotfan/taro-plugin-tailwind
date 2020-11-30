@@ -1,6 +1,6 @@
 # taro-plugin-tailwind
 
-> Taro 接入 [tailwindcss](https://tailwindcss.com/) (2.0) 插件，支持 H5 / 小程序，RN 端未测试。
+> Taro 接入 [tailwindcss](https://tailwindcss.com/) (2.0) 插件，支持小程序，RN / H5 未测试。
 
 ## 安装
 
@@ -38,7 +38,13 @@ $ taro tailwind --init // 默认生成 mini, h5 两种配置文件且必须存�
 $ taro tailwind --init weapp,tt,swan // 生成其它平台以 (,) 分隔
 ```
 
-`tailwind.src.css` 文件自行放置在项目 `/src` 目录下，正常引用即可。
+`tailwind.src.css` 文件自行放置在项目 `/src` 目录下，正常引用即可，示例内容：
+
+```css
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+```
 
 ### 参数
 
