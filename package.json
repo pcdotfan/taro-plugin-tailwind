@@ -1,6 +1,6 @@
 {
     "name": "taro-plugin-tailwind",
-    "version": "1.0.3",
+    "version": "1.0.6",
     "main": "index.js",
     "scripts": {
         "build": "npm run clean && npm run prod",
@@ -35,13 +35,11 @@
         "@types/react": "^17.0.0",
         "@types/webpack": "^4.41.25",
         "@types/webpack-dev-server": "^3.11.1",
-        "autoprefixer": "^10.0.4",
         "rimraf": "^3.0.2",
         "typescript": "^4.1.2"
     },
     "dependencies": {
-        "tailwindcss": "^2.0.1",
-        "postcss": "^8",
+        "autoprefixer": "^9",
         "postcss-css-variables": "^0.17.0",
         "postcss-discard-empty": "^4.0.1",
         "postcss-import": "^12.0.0",
@@ -49,6 +47,7 @@
         "postcss-loader": "^4.1.0",
         "postcss-preset-env": "^6.7.0",
         "postcss-syntax": "^0.36.2",
-        "postcss-unprefix": "^2.1.4"
+        "postcss-unprefix": "^2.1.4",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat"
     }
 }
