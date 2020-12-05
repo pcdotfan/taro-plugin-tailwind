@@ -33,27 +33,24 @@ export default (ctx: IPluginContext, test) => {
         const postcssConfig = {
             mini: {
                 plugins: [
-                    ['postcss-import', {}],
-                    [
-                        'tailwindcss',
-                        {
-                            config: getConfigPath(
-                                checkConfigExists(CURRENT_PLATFORM) ? CURRENT_PLATFORM : 'mini'
-                            ),
-                        },
-                    ],
-                    ['postcss-discard-empty', {}],
-                    ['postcss-unprefix', {}],
-                    ['postcss-css-variables', {}],
-                    ['postcss-preset-env', {}],
+                    require('postcss-import')(),
+                    require('tailwindcss')({
+                        config: getConfigPath(
+                            checkConfigExists(CURRENT_PLATFORM) ? CURRENT_PLATFORM : 'mini'
+                        ),
+                    }),
+                    require('postcss-discard-empty')(),
+                    require('postcss-unprefix')(),
+                    require('postcss-css-variables')(),
+                    require('postcss-preset-env')(),
                 ],
             },
             h5: {
                 plugins: [
-                    ['postcss-import', {}],
-                    ['tailwindcss', { config: getConfigPath('h5') }],
-                    ['postcss-preset-env', {}],
-                    ['autoprefixer', {}],
+                    require('postcss-import')(),
+                    require('tailwindcss')({ config: getConfigPath('h5') }),
+                    require('postcss-preset-env')(),
+                    require('autoprefixer')(),
                 ],
             },
         };
@@ -65,14 +62,12 @@ export default (ctx: IPluginContext, test) => {
                         use: [
                             {
                                 loader: 'postcss-loader',
-                                options: {
-                                    postcssOptions:
-                                        postcssConfig[
-                                            SUPPORTED_MINI_PLATFORMS.includes(CURRENT_PLATFORM)
-                                                ? 'mini'
-                                                : 'h5'
-                                        ],
-                                },
+                                options:
+                                    postcssConfig[
+                                        SUPPORTED_MINI_PLATFORMS.includes(CURRENT_PLATFORM)
+                                            ? 'mini'
+                                            : 'h5'
+                                    ],
                             },
                         ],
                     },
