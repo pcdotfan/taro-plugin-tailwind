@@ -1,0 +1,17 @@
+{
+  "miniprogramRoot": "dist/",
+  "projectname": "taro-plugin-tailwind-example",
+  "description": "",
+  "appid": "touristappid",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false,
+    "useMultiFrameRuntime": true,
+    "bundle": false,
+    "useApiHook": true
+  },
+  "compileType": "miniprogram",
+  "condition": {}
+}
