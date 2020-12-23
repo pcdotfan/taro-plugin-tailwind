@@ -8,7 +8,16 @@ module.exports = {
     darkMode: 'media',
     corePlugins: {
         preflight: false,
+        divideColor: false,
+        divideOpacity: false,
+        divideStyle: false,
+        divideWidth: false,
+        divideColor: false,
+        space: false,
+        placeholderColor: false,
+        placeholderOpacity: false,
     },
+    separator: '_',
     theme: {
         width: theme => ({
             auto: 'auto',
