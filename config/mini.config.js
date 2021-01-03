@@ -12,7 +12,6 @@ module.exports = {
         divideOpacity: false,
         divideStyle: false,
         divideWidth: false,
-        divideColor: false,
         space: false,
         placeholderColor: false,
         placeholderOpacity: false,
