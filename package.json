@@ -44,7 +44,7 @@
         "postcss-discard-empty": "^4.0.1",
         "postcss-import": "^12.0.0",
         "postcss-jsx": "^0.36.4",
-        "postcss-loader": "^4.1.0",
+        "postcss-loader": "^5.0.0",
         "postcss-preset-env": "^6.7.0",
         "postcss-syntax": "^0.36.2",
         "postcss-unprefix": "^2.1.4",
