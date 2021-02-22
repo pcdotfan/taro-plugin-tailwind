@@ -39,7 +39,7 @@
         "typescript": "^4.1.2"
     },
     "dependencies": {
-        "autoprefixer": "^9",
+        "autoprefixer": "^10",
         "postcss-css-variables": "^0.17.0",
         "postcss-discard-empty": "^4.0.1",
         "postcss-import": "^12.0.0",
