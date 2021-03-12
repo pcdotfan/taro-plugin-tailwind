@@ -1,6 +1,6 @@
 # taro-plugin-tailwind
 
-> Taro 接入 [tailwindcss](https://tailwindcss.com/) (2.0) 插件，支持小程序，RN / H5 未测试。
+> Taro 接入 [windicss（tailwindcss）](https://github.com/windicss/windicss/) (2.0) 插件，支持小程序 / H5，React Native 暂未测试。
 
 ## 安装
 
@@ -14,7 +14,7 @@ $ npm i taro-plugin-tailwind --save
 
 ### 引入插件
 
-请确保 Taro CLI 已升级至 Taro 3 的最新版本。
+请确保 Taro CLI 已升级至 Taro 3 的最新版本，确保 `taro-plugin-tailwind` 版本在 `v1.1.0` 及以上。
 
 修改项目 `config/index.js` 中的 `plugins` 配置如下：
 
@@ -26,6 +26,17 @@ const config = {
         'taro-plugin-tailwind',
     ],
     /// ...
+    /// 亦或是传入具体参数：
+    plugins: [
+        // ...其余插件
+        ['taro-plugin-tailwind', {
+            scan: {
+                dirs: ['./src'], // 只扫描 src 目录下的文件
+                exclude: ['dist/**/*'], // 排除 dist 目录
+            },
+            // 具体参数见：https://github.com/windicss/vite-plugin-windicss/blob/main/packages/plugin-utils/src/options.ts
+        }]
+    ],
 };
 ```
 
@@ -38,13 +49,13 @@ $ taro tailwind --init // 默认生成 mini, h5 两种配置文件且必须存�
 $ taro tailwind --init weapp,tt,swan // 生成其它平台以 (,) 分隔
 ```
 
-`tailwind.src.css` 文件自行放置在项目 `/src` 目录下，正常引用即可，示例内容：
+在项目入口文件（如 `main.js / app.tsx`）引入 `windi.css` 即可：
 
-```css
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+```js
+import 'windi.css';
 ```
+
+未尽事宜请参阅 [windicss 文档](https://windicss.org/guide/configuration.html#example-configuration)。
 
 ### 参数
 
@@ -52,11 +63,11 @@ $ taro tailwind --init weapp,tt,swan // 生成其它平台以 (,) 分隔
 
 | 参数项 | 类型   | 是否可选 | 用途                                                                     |
 | :----- | :----- | :------- | :----------------------------------------------------------------------- |
-| test   | RegExp | 是       | `postcss-loader` 的 `Rule.test`，默认值： `/\/src\/tailwind\.src\.css$/` |
+| config   | Object | 是       | `windicss-webpack-plugin` 的可选参数（[UserOption](https://github.com/windicss/vite-plugin-windicss/blob/main/packages/plugin-utils/src/options.ts)），默认值： `{ scan: { dirs: ['./src'], exclude: ['dist/**/*'] } }`。 |
 
-### 注意事项
+## 注意事项
 
-#### 小程序
+### 小程序
 
 小程序不支持使用反斜杠和冒号作为类名，因此默认配置文件 `mini.config.js` 中，**冒号、反斜杠** 修改成使用下划线 `_`（参考 [taro-tailwind](https://github.com/windedge/taro-tailwind)）
 
@@ -71,3 +82,14 @@ $ taro tailwind --init weapp,tt,swan // 生成其它平台以 (,) 分隔
 ```
 
 配置文件中 `separator` 也设置为 `_`（[configuration#separator](https://tailwindcss.com/docs/configuration#separator)）并且 `preflight` 选项应该始终保持关闭，不加载 [modern-normalize](https://github.com/sindresorhus/modern-normalize)。
+
+## 常见问题
+
+**Q：我的 [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) 失效了！**
+
+A：因为 Tailwind CSS IntelliSense 插件需要：
+
+1. 项目安装 tailwindcss（即使不实际使用）
+2. 项目目录下存在 `tailwind.config.js / tailwind.js` 文件
+
+
