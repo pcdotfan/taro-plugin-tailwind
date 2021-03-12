@@ -17,6 +17,9 @@
     "sourceMap": true,
     "baseUrl": "."
   },
+  "files": [
+    "index.d.ts"
+  ],
   "include": [
     "./src"
   ],

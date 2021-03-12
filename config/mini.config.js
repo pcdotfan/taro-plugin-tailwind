@@ -1,10 +1,8 @@
-/* eslint-disable import/no-commonjs */
 module.exports = {
-    purge: {
-        enabled: true,
-        content: ['./src/**/*.{js,jsx,ts,tsx,vue}'],
-        defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
-    },
+    prefixer: false,
+    separator: '_',
+    compile: false,
+    globalUtility: false,
     darkMode: 'media',
     corePlugins: {
         preflight: false,
@@ -16,7 +14,6 @@ module.exports = {
         placeholderColor: false,
         placeholderOpacity: false,
     },
-    separator: '_',
     theme: {
         width: theme => ({
             auto: 'auto',
