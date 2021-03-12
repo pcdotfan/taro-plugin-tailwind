@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Input, Image, Button } from "@tarojs/components";
+import { View, Text, Image, Button } from "@tarojs/components";
 import Logo from "../../logo.svg";
 import "./index.css";
 
@@ -66,6 +66,9 @@ export default class Index extends Component {
             <Text>Want to dig deeper into Tailwind?</Text>
             <Text className="text-cyan-600">Read the docs &rarr;</Text>
           </View>
+        </View>
+        <View>
+          <Button className="btn-special">A Special Button</Button>
         </View>
       </View>
     );
