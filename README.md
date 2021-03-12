@@ -55,7 +55,7 @@ $ taro tailwind --init weapp,tt,swan // 生成其它平台以 (,) 分隔
 import 'windi.css';
 ```
 
-未尽事宜请参阅 [windicss docs](https://windicss.org/guide/configuration.html#example-configuration)
+未尽事宜请参阅 [windicss 文档](https://windicss.org/guide/configuration.html#example-configuration)。
 
 ### 参数
 
@@ -65,9 +65,9 @@ import 'windi.css';
 | :----- | :----- | :------- | :----------------------------------------------------------------------- |
 | config   | Object | 是       | `windicss-webpack-plugin` 的可选参数（[UserOption](https://github.com/windicss/vite-plugin-windicss/blob/main/packages/plugin-utils/src/options.ts)），默认值： `{ scan: { dirs: ['./src'], exclude: ['dist/**/*'] } }`。 |
 
-### 注意事项
+## 注意事项
 
-#### 小程序
+### 小程序
 
 小程序不支持使用反斜杠和冒号作为类名，因此默认配置文件 `mini.config.js` 中，**冒号、反斜杠** 修改成使用下划线 `_`（参考 [taro-tailwind](https://github.com/windedge/taro-tailwind)）
 
@@ -83,9 +83,13 @@ import 'windi.css';
 
 配置文件中 `separator` 也设置为 `_`（[configuration#separator](https://tailwindcss.com/docs/configuration#separator)）并且 `preflight` 选项应该始终保持关闭，不加载 [modern-normalize](https://github.com/sindresorhus/modern-normalize)。
 
-### 常见问题
+## 常见问题
 
 **Q：我的 [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) 失效了！**
-A：因为 Tailwind CSS IntelliSense 插件需要 1. 项目安装 tailwindcss（即使不实际使用）；2. 项目目录下存在 `tailwind.config.js / tailwind.js` 文件
+
+A：因为 Tailwind CSS IntelliSense 插件需要：
+
+1. 项目安装 tailwindcss（即使不实际使用）
+2. 项目目录下存在 `tailwind.config.js / tailwind.js` 文件
 
 
