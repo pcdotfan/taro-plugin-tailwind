@@ -7,7 +7,9 @@
 在 Taro 项目根目录下安装
 
 ```bash
-$ npm i taro-plugin-tailwind --save
+$ npm i taro-plugin-tailwind --save-dev
+$ # 或使用 yarn
+$ yarn add -D taro-plugin-tailwind
 ```
 
 ## 使用
