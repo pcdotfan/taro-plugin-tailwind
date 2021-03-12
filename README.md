@@ -63,7 +63,7 @@ import 'windi.css';
 
 | 参数项 | 类型   | 是否可选 | 用途                                                                     |
 | :----- | :----- | :------- | :----------------------------------------------------------------------- |
-| config   | Object | 是       | `windicss-webpack-plugin` 的可选参数（[UserOption](https://github.com/windicss/vite-plugin-windicss/blob/main/packages/plugin-utils/src/options.ts)），默认值： `{ scan: { dirs: ['./src'], exclude: ['dist/**/*'] } }` |
+| config   | Object | 是       | `windicss-webpack-plugin` 的可选参数（[UserOption](https://github.com/windicss/vite-plugin-windicss/blob/main/packages/plugin-utils/src/options.ts)），默认值： `{ scan: { dirs: ['./src'], exclude: ['dist/**/*'] } }`。 |
 
 ### 注意事项
 
@@ -82,3 +82,10 @@ import 'windi.css';
 ```
 
 配置文件中 `separator` 也设置为 `_`（[configuration#separator](https://tailwindcss.com/docs/configuration#separator)）并且 `preflight` 选项应该始终保持关闭，不加载 [modern-normalize](https://github.com/sindresorhus/modern-normalize)。
+
+### 常见问题
+
+**Q：我的 [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) 失效了！**
+A：因为 Tailwind CSS IntelliSense 插件需要 1. 项目安装 tailwindcss（即使不实际使用）；2. 项目目录下存在 `tailwind.config.js / tailwind.js` 文件
+
+
