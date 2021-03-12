@@ -49,13 +49,13 @@ $ taro tailwind --init // 默认生成 mini, h5 两种配置文件且必须存�
 $ taro tailwind --init weapp,tt,swan // 生成其它平台以 (,) 分隔
 ```
 
-在项目入口文件（如 `main.js / app.tsx`）引入 `windi.css` 即可：
+在项目入口文件（如 `main.js / app.tsx`）引入 `windi.css`：
 
 ```js
 import 'windi.css';
 ```
 
-未尽事宜请参阅 [windicss 文档](https://windicss.org/guide/configuration.html#example-configuration)。
+由此即可在项目任意位置使用 `tailwindcss`，并**不再**需要手动引入其它文件（如 `@import "tailwindcss/base";`）。未尽事宜请参阅 [windicss 文档](https://windicss.org/guide/configuration.html#example-configuration)。
 
 ### 参数
 
