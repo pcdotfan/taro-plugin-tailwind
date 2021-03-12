@@ -68,7 +68,6 @@ export default (ctx: IPluginContext, config: ITaroPluginTailwindOptions) => {
                                 loader: 'postcss-loader',
                                 options: {
                                     plugins: [
-                                        require('tailwindcss')({ config: getConfigPath('h5') }),
                                         require('postcss-selector-replace')({
                                             before: ['*'],
                                             after: [':root'],
