@@ -89,9 +89,5 @@ import 'windi.css';
 
 **Q：我的 [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) 失效了！**
 
-A：因为 Tailwind CSS IntelliSense 插件需要：
-
-1. 项目安装 tailwindcss（即使不实际使用）
-2. 项目目录下存在 `tailwind.config.js / tailwind.js` 文件
-
+A：请换用 [Windi CSS Intellisense](https://github.com/windicss/windicss-intellisense)
 
