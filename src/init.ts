@@ -8,7 +8,7 @@ export default (ctx: IPluginContext) => {
     ctx.registerCommand({
         name: 'tailwind',
         optionsMap: {
-            '--init': 'generates necessary configs and tailwind.src.css',
+            '--init': 'generates necessary configs',
         },
         synopsisList: ['taro tailwind --init', 'taro tailwind --init weapp,dd,tt,swan'],
         fn() {
