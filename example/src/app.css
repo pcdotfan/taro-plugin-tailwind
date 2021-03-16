@@ -1,0 +1,3 @@
+.btn-special {
+  @apply rounded-lg leading-tight py-3 px-2 shadow-md font-normal text-base text-white;
+}
