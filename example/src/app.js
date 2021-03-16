@@ -1,5 +1,6 @@
 import { Component } from "react";
 import "windi.css";
+import "./app.css";
 
 class App extends Component {
   componentDidMount() { }
