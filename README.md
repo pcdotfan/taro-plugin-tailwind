@@ -91,3 +91,6 @@ import 'windi.css';
 
 A：请换用 [Windi CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense)
 
+**Q：保存后新样式没有生效？**
+
+A：请暂时设置 `NODE_ENV` 为 `production` 解决此问题，例：`NODE_ENV=production npm run build:weapp -- --watch`，具体参见示例。
