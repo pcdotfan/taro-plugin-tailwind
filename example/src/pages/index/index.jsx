@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Input, Image, Button } from "@tarojs/components";
+import { View, Text, Image } from "@tarojs/components";
 import Logo from "../../logo.svg";
 import "./index.css";
 
