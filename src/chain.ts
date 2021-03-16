@@ -1,7 +1,12 @@
 import { IPluginContext } from '@tarojs/service';
 import { ITaroPluginTailwindOptions } from 'index';
 import WebpackWindiCSSPlugin from 'windicss-webpack-plugin';
-import { HIDDEN_CONFIG_PATH, CURRENT_PLATFORM, SUPPORTED_PLATFORMS } from './constant';
+import {
+    HIDDEN_CONFIG_PATH,
+    CURRENT_PLATFORM,
+    SUPPORTED_PLATFORMS,
+    SUPPORTED_MINI_PLATFORMS,
+} from './constant';
 
 const fs = require('fs-extra');
 const path = require('path');
@@ -52,33 +57,36 @@ export default (ctx: IPluginContext, config: ITaroPluginTailwindOptions) => {
             {
                 scan: {
                     dirs: ['./src'],
-                    exclude: ['dist/**/*'],
+                    exclude: ['./dist/**/*'],
+                    fileExtensions: ['vue', 'jsx', 'tsx'],
                 },
                 config: configFilePath,
                 ...config,
             },
         ]);
-        chain.merge({
-            module: {
-                rule: {
-                    taroTailwindLoader: {
-                        test: 'windi.css',
-                        use: [
-                            {
-                                loader: 'postcss-loader',
-                                options: {
-                                    plugins: [
-                                        require('postcss-selector-replace')({
-                                            before: ['*'],
-                                            after: [':root'],
-                                        }),
-                                    ],
+        if (SUPPORTED_MINI_PLATFORMS.includes(CURRENT_PLATFORM)) {
+            chain.merge({
+                module: {
+                    rule: {
+                        taroTailwindLoader: {
+                            test: 'windi.css',
+                            use: [
+                                {
+                                    loader: 'postcss-loader',
+                                    options: {
+                                        plugins: [
+                                            require('postcss-selector-replace')({
+                                                before: ['*'],
+                                                after: [':root'],
+                                            }),
+                                        ],
+                                    },
                                 },
-                            },
-                        ],
+                            ],
+                        },
                     },
                 },
-            },
-        });
+            });
+        }
     });
 };
