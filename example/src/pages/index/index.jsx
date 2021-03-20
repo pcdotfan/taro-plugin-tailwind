@@ -18,7 +18,7 @@ export default class Index extends Component {
     return (
       <View className='index min-h-screen bg-gray-100 p-6 flex flex-col justify-center'>
         <View className='relative px-4 py-10 bg-white shadow-lg rounded-3xl p-20'>
-          <Image src={Logo} className='h-7' />
+          <Image src={Logo} className='h-7 max-w-full' />
           <View className='py-8 text-base leading-6 text-gray-700'>
             <View className='py-4'>
               An advanced online playground for Tailwind CSS, including support
