@@ -14,6 +14,9 @@ module.exports = {
         placeholderColor: false,
         placeholderOpacity: false,
     },
+    exclude: [
+        /([0-9]{1,}[.][0-9]*)$/,
+    ],
     theme: {
         width: theme => ({
             auto: 'auto',
