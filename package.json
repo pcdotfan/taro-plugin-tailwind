@@ -44,7 +44,7 @@
   "dependencies": {
     "@windicss/plugin-utils": "^0.11.1",
     "postcss-selector-replace": "^1.0.2",
-    "windicss-webpack-plugin": "^0.2.9"
+    "windicss-webpack-plugin": "^0.3.2"
   },
   "release-it": {
     "github": {
