@@ -57,7 +57,6 @@ export default (ctx: IPluginContext, config: ITaroPluginTailwindOptions) => {
             {
                 scan: {
                     dirs: ['./src'],
-                    exclude: ['./dist/**/*'],
                     fileExtensions: ['vue', 'jsx', 'tsx'],
                 },
                 config: configFilePath,
