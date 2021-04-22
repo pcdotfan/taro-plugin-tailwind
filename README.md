@@ -61,7 +61,7 @@ import 'windi.css';
 
 | 参数项 | 类型   | 是否可选 | 用途                                                                     |
 | :----- | :----- | :------- | :----------------------------------------------------------------------- |
-| config   | Object | 是       | `windicss-webpack-plugin` 的可选参数（[UserOption](https://github.com/windicss/vite-plugin-windicss/blob/main/packages/plugin-utils/src/options.ts#L10)），默认值： `{ scan: { dirs: ['./src'], exclude: ['dist/**/*'], fileExtensions: ['vue', 'jsx', 'tsx'] } }`。 |
+| config   | Object | 是       | `windicss-webpack-plugin` 的可选参数（[UserOption](https://github.com/windicss/vite-plugin-windicss/blob/main/packages/plugin-utils/src/options.ts#L10)），默认值： `{ scan: { dirs: ['./src'], fileExtensions: ['vue', 'jsx', 'tsx'] } }`。 |
 
 ## 注意事项
 
