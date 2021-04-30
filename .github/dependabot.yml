@@ -1,0 +1,25 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "21:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@types/webpack"
+    versions:
+    - 5.0.0
+    - 5.28.0
+  - dependency-name: postcss-loader
+    versions:
+    - 5.0.0
+    - 5.1.0
+    - 5.2.0
+  - dependency-name: autoprefixer
+    versions:
+    - 10.2.4
+    - 10.2.5
+  - dependency-name: postcss-import
+    versions:
+    - 14.0.0
