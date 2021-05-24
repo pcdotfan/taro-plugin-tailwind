@@ -44,7 +44,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "@windicss/plugin-utils": "^0.15.10",
+    "@windicss/plugin-utils": "^0.16.0",
     "postcss-selector-replace": "^1.0.2",
     "windicss-webpack-plugin": "^0.5.3"
   },
