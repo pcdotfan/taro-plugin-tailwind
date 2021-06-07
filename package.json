@@ -46,7 +46,7 @@
   "dependencies": {
     "@windicss/plugin-utils": "^1.0.1",
     "postcss-selector-replace": "^1.0.2",
-    "windicss-webpack-plugin": "^0.6.1"
+    "windicss-webpack-plugin": "^1.0.0"
   },
   "hooks": {
     "after:bump": "npm run build"
