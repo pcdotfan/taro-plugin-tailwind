@@ -1,26 +1,32 @@
-import { IPluginContext } from '@tarojs/service';
-import { HIDDEN_CONFIG_PATH } from './constant';
+import { IPluginContext } from "@tarojs/service";
+import { HIDDEN_CONFIG_PATH } from "./constant";
 
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require("fs-extra");
+const path = require("path");
 
 export default (ctx: IPluginContext) => {
     ctx.registerCommand({
-        name: 'tailwind',
+        name: "tailwind",
         optionsMap: {
-            '--init': 'generates necessary configs',
+            "--init": "generates necessary configs",
         },
-        synopsisList: ['taro tailwind --init', 'taro tailwind --init weapp,dd,tt,swan'],
+        synopsisList: [
+            "taro tailwind --init",
+            "taro tailwind --init weapp,dd,tt,swan",
+        ],
         fn() {
             const {
                 options: { init },
             } = ctx.runOpts;
-            const defaultConfig = path.join(__dirname, `../config/mini.config.js`);
-            let generatePlatforms = ['mini', 'h5'];
-            if (init && typeof init === 'string' && init.trim()) {
-                generatePlatforms = init.split(',');
+            const defaultConfig = path.join(
+                __dirname,
+                `../config/mini.config.js`
+            );
+            let generatePlatforms = ["mini", "h5"];
+            if (init && typeof init === "string" && init.trim()) {
+                generatePlatforms = init.split(",");
             }
-            generatePlatforms.map(platform => {
+            generatePlatforms.map((platform) => {
                 const filePath = `${HIDDEN_CONFIG_PATH}/${platform}.config.js`;
                 const targetFile = path.resolve(filePath);
                 if (fs.existsSync(targetFile)) {
@@ -30,9 +36,19 @@ export default (ctx: IPluginContext) => {
                         )
                     );
                 } else {
-                    if (fs.existsSync(path.join(__dirname, `../config/${platform}.config.js`))) {
+                    if (
+                        fs.existsSync(
+                            path.join(
+                                __dirname,
+                                `../config/${platform}.config.js`
+                            )
+                        )
+                    ) {
                         fs.copySync(
-                            path.join(__dirname, `../config/${platform}.config.js`),
+                            path.join(
+                                __dirname,
+                                `../config/${platform}.config.js`
+                            ),
                             targetFile
                         );
                     } else {

@@ -1,15 +1,18 @@
 import { Component } from "react";
 import "windi.css";
+// import "windi-base.css";
+// import "windi-components.css";
+// import "windi-utilities.css";
 import "./app.css";
 
 class App extends Component {
-  componentDidMount() { }
+  componentDidMount() {}
 
-  componentDidShow() { }
+  componentDidShow() {}
 
-  componentDidHide() { }
+  componentDidHide() {}
 
-  componentDidCatchError() { }
+  componentDidCatchError() {}
 
   // this.props.children 是将要会渲染的页面
   render() {

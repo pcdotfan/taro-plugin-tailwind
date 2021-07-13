@@ -1,21 +1,25 @@
-import { IPluginContext } from '@tarojs/service';
-import { ITaroPluginTailwindOptions } from 'index';
-import WebpackWindiCSSPlugin from 'windicss-webpack-plugin';
+import { IPluginContext } from "@tarojs/service";
+import { ITaroPluginTailwindOptions } from "index";
+import WebpackWindiCSSPlugin from "windicss-webpack-plugin";
 import {
     HIDDEN_CONFIG_PATH,
     CURRENT_PLATFORM,
     SUPPORTED_PLATFORMS,
     SUPPORTED_MINI_PLATFORMS,
-} from './constant';
+} from "./constant";
 
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require("fs-extra");
+const path = require("path");
 
-const getConfigPath = platform => `${HIDDEN_CONFIG_PATH}/${platform}.config.js`;
-const checkConfigExists = platform => fs.existsSync(path.resolve(getConfigPath(platform)));
+const getConfigPath = (platform) =>
+    `${HIDDEN_CONFIG_PATH}/${platform}.config.js`;
+const checkConfigExists = (platform) =>
+    fs.existsSync(path.resolve(getConfigPath(platform)));
 
 export default (ctx: IPluginContext, config: ITaroPluginTailwindOptions) => {
-    const requiredConfigFileExists = ['h5', 'mini'].some(platform => checkConfigExists(platform));
+    const requiredConfigFileExists = ["h5", "mini"].some((platform) =>
+        checkConfigExists(platform)
+    );
     ctx.onBuildStart(() => {
         if (!requiredConfigFileExists) {
             console.log(
@@ -45,19 +49,19 @@ export default (ctx: IPluginContext, config: ITaroPluginTailwindOptions) => {
             configFilePath = `${HIDDEN_CONFIG_PATH}/mini.config.js`; // fallback
         }
         // copy tailwind.config.js to root directory for tailwind intellisense support
-        if (!fs.existsSync(path.resolve('tailwind.config.js'))) {
-            fs.copySync(path.resolve(configFilePath), 'tailwind.config.js');
+        if (!fs.existsSync(path.resolve("tailwind.config.js"))) {
+            fs.copySync(path.resolve(configFilePath), "tailwind.config.js");
             console.log(
                 ctx.helper.chalk.greenBright(
                     `⚠️ [taro-plugin-tailwind]: copied ${configFilePath} as tailwind.config.js to root directory...`
                 )
             );
         }
-        chain.plugin('windicss-webpack-plugin').use(WebpackWindiCSSPlugin, [
+        chain.plugin("windicss-webpack-plugin").use(WebpackWindiCSSPlugin, [
             {
                 scan: {
-                    dirs: ['./src'],
-                    fileExtensions: ['vue', 'jsx', 'tsx'],
+                    dirs: ["./src"],
+                    fileExtensions: ["vue", "jsx", "tsx"],
                 },
                 config: configFilePath,
                 ...config,
@@ -68,17 +72,22 @@ export default (ctx: IPluginContext, config: ITaroPluginTailwindOptions) => {
                 module: {
                     rule: {
                         taroTailwindLoader: {
-                            test: 'windi.css',
+                            test: "windi.css",
                             use: [
                                 {
-                                    loader: 'postcss-loader',
+                                    loader: "postcss-loader",
                                     options: {
-                                        plugins: [
-                                            require('postcss-selector-replace')({
-                                                before: ['*'],
-                                                after: [':root'],
-                                            }),
-                                        ],
+                                        postcssOptions: {
+                                            plugins: [
+                                                [
+                                                    "postcss-selector-replace",
+                                                    {
+                                                        before: ["*"],
+                                                        after: [":root"],
+                                                    },
+                                                ],
+                                            ],
+                                        },
                                     },
                                 },
                             ],

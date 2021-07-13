@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@windicss/plugin-utils": "^1.0.1",
+    "postcss-loader": "^4.3.0",
     "postcss-selector-replace": "^1.0.2",
     "windicss-webpack-plugin": "^1.0.0"
   },
