@@ -26,7 +26,7 @@ export default (ctx: IPluginContext) => {
             if (init && typeof init === "string" && init.trim()) {
                 generatePlatforms = init.split(",");
             }
-            generatePlatforms.map((platform) => {
+            generatePlatforms.forEach((platform) => {
                 const filePath = `${HIDDEN_CONFIG_PATH}/${platform}.config.js`;
                 const targetFile = path.resolve(filePath);
                 if (fs.existsSync(targetFile)) {
@@ -35,31 +35,25 @@ export default (ctx: IPluginContext) => {
                             `⚠️ [taro-plugin-tailwind] File ${filePath} exists!`
                         )
                     );
-                } else {
-                    if (
-                        fs.existsSync(
-                            path.join(
-                                __dirname,
-                                `../config/${platform}.config.js`
-                            )
-                        )
-                    ) {
-                        fs.copySync(
-                            path.join(
-                                __dirname,
-                                `../config/${platform}.config.js`
-                            ),
-                            targetFile
-                        );
-                    } else {
-                        fs.copySync(defaultConfig, targetFile);
-                    }
-                    console.log(
-                        ctx.helper.chalk.greenBright(
-                            `[taro-plugin-tailwind] File ${filePath} has been created.`
-                        )
-                    );
+                    return;
                 }
+                if (
+                    fs.existsSync(
+                        path.join(__dirname, `../config/${platform}.config.js`)
+                    )
+                ) {
+                    fs.copySync(
+                        path.join(__dirname, `../config/${platform}.config.js`),
+                        targetFile
+                    );
+                } else {
+                    fs.copySync(defaultConfig, targetFile);
+                }
+                console.log(
+                    ctx.helper.chalk.greenBright(
+                        `[taro-plugin-tailwind] File ${filePath} has been created.`
+                    )
+                );
             });
         },
     });
