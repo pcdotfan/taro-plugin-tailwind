@@ -37,7 +37,7 @@
     "@types/mkdirp": "^1.0.2",
     "@types/node": "^16.6.1",
     "@types/react": "^17.0.18",
-    "@types/webpack-dev-server": "^3.11.5",
+    "@types/webpack-dev-server": "^4.3.0",
     "color-string": "^1.6.0",
     "release-it": "^14.11.4",
     "rimraf": "^3.0.2",
