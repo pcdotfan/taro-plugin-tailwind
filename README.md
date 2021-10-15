@@ -85,7 +85,7 @@ import 'windi.css';
 
 ## 常见问题
 
-**Q：为什么没有 Intellisense 失效了？**
+**Q：为什么 Intellisense 失效了？**
 
 A：根据所使用的版本选择安装 [Windi CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense) 或 [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)。
 
