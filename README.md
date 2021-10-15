@@ -55,7 +55,7 @@ $ taro tailwind --init weapp,tt,swan // 生成其它平台以 (,) 分隔
 import 'windi.css';
 ```
 
-由此即可在项目任意位置使用 `tailwindcss`，并**不再**需要手动引入其它文件（如 `@import "tailwindcss/base"`）。未尽事宜请参阅 [windicss 文档](https://windicss.org/guide/configuration.html#example-configuration)。
+由此即可在项目任意位置使用 `windicss`，并**不再**需要手动引入其它文件。
 
 ### 参数
 
@@ -85,9 +85,9 @@ import 'windi.css';
 
 ## 常见问题
 
-**Q：我的 [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) 失效了！**
+**Q：为什么没有 Intellisense 失效了？**
 
-A：请换用 [Windi CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense)。
+A：根据所使用的版本选择安装 [Windi CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense) 或 [Tailwind CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)。
 
 **Q：保存后新样式没有生效？**
 
