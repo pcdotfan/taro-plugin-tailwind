@@ -2,7 +2,7 @@
 
 > Taro 接入 windicss / tailwindcss 插件，支持小程序 / H5，React Native 暂未测试。
 
-> 1.1.x 及之后版本使用 [windicss](https://windicss.org/)、1.0.x 版本使用 [tailwind (2.0)](https://tailwindcss.com/)，相关问题请自行查阅对应文档。
+> `1.1.x` 及之后版本使用 [windicss](https://windicss.org/)，`1.0.x（不再维护）` 版本使用 [tailwindcss](https://tailwindcss.com/)，相关问题请自行查阅对应文档。
 
 ## 安装
 
