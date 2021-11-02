@@ -1,6 +1,6 @@
 import { IPluginContext } from "@tarojs/service";
 import { ITaroPluginTailwindOptions } from "index";
-import WebpackWindiCSSPlugin from "windicss-webpack-plugin";
+import * as WebpackWindiCSSPlugin from "windicss-webpack-plugin";
 import {
     HIDDEN_CONFIG_PATH,
     CURRENT_PLATFORM,
