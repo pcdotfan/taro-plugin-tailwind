@@ -30,24 +30,24 @@
   },
   "homepage": "https://github.com/pcdotfan/taro-plugin-tailwind#readme",
   "devDependencies": {
-    "@tarojs/service": "^3.3.3",
-    "@tarojs/taro": "^3.3.3",
-    "@types/fs-extra": "^9.0.12",
-    "@types/glob": "^7.1.4",
+    "@tarojs/service": "^3.3.12",
+    "@tarojs/taro": "^3.3.12",
+    "@types/fs-extra": "^9.0.13",
+    "@types/glob": "^7.2.0",
     "@types/mkdirp": "^1.0.2",
-    "@types/node": "^16.6.1",
-    "@types/react": "^17.0.18",
-    "@types/webpack-dev-server": "^3.11.5",
+    "@types/node": "^16.11.6",
+    "@types/react": "^17.0.33",
+    "@types/webpack-dev-server": "^4.3.1",
     "color-string": "^1.6.0",
-    "release-it": "^14.11.4",
+    "release-it": "^14.11.6",
     "rimraf": "^3.0.2",
-    "typescript": "^4.3.5"
+    "typescript": "^4.4.4"
   },
   "dependencies": {
-    "@windicss/plugin-utils": "^1.2.7",
+    "@windicss/plugin-utils": "^1.4.12",
     "postcss-loader": "^4.3.0",
     "postcss-selector-replace": "^1.0.2",
-    "windicss-webpack-plugin": "^1.4.4"
+    "windicss-webpack-plugin": "^1.5.5"
   },
   "hooks": {
     "after:bump": "npm run build"
