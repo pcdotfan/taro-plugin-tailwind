@@ -1,63 +1,63 @@
 {
-  "name": "taro-plugin-tailwind",
-  "version": "1.2.2",
-  "main": "index.js",
-  "scripts": {
-    "build": "npm run clean && npm run prod",
-    "dev": "tsc -w",
-    "prod": "tsc",
-    "clean": "rimraf dist",
-    "release": "release-it"
-  },
-  "files": [
-    "src",
-    "config",
-    "dist",
-    "index.js",
-    "package.json"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pcdotfan/taro-plugin-tailwind.git"
-  },
-  "author": "pcdotfan",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pcdotfan/taro-plugin-tailwind/issues"
-  },
-  "homepage": "https://github.com/pcdotfan/taro-plugin-tailwind#readme",
-  "devDependencies": {
-    "@tarojs/service": "^3.3.12",
-    "@tarojs/taro": "^3.3.12",
-    "@types/fs-extra": "^9.0.13",
-    "@types/glob": "^7.2.0",
-    "@types/mkdirp": "^1.0.2",
-    "@types/node": "^16.11.6",
-    "@types/react": "^17.0.33",
-    "@types/webpack-dev-server": "^4.3.1",
-    "color-string": "^1.6.0",
-    "release-it": "^14.11.6",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.4.4"
-  },
-  "dependencies": {
-    "@windicss/plugin-utils": "^1.4.12",
-    "postcss-loader": "^4.3.0",
-    "postcss-selector-replace": "^1.0.2",
-    "windicss-webpack-plugin": "^1.5.5"
-  },
-  "hooks": {
-    "after:bump": "npm run build"
-  },
-  "release-it": {
-    "github": {
-      "release": true
+    "name": "taro-plugin-tailwind",
+    "version": "1.2.2",
+    "main": "index.js",
+    "scripts": {
+        "build": "npm run clean && npm run prod",
+        "dev": "tsc -w",
+        "prod": "tsc",
+        "clean": "rimraf dist",
+        "release": "release-it"
     },
-    "npm": {
-      "skipChecks": true
+    "files": [
+        "src",
+        "config",
+        "dist",
+        "index.js",
+        "package.json"
+    ],
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pcdotfan/taro-plugin-tailwind.git"
+    },
+    "author": "pcdotfan",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/pcdotfan/taro-plugin-tailwind/issues"
+    },
+    "homepage": "https://github.com/pcdotfan/taro-plugin-tailwind#readme",
+    "devDependencies": {
+        "@tarojs/service": "^3.3.15",
+        "@tarojs/taro": "^3.3.15",
+        "@types/fs-extra": "^9.0.13",
+        "@types/glob": "^7.2.0",
+        "@types/mkdirp": "^1.0.2",
+        "@types/node": "^16.11.10",
+        "@types/react": "^17.0.36",
+        "@types/webpack-dev-server": "^4.5.0",
+        "color-string": "^1.6.0",
+        "release-it": "^14.11.8",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.5.2"
+    },
+    "dependencies": {
+        "@windicss/plugin-utils": "^1.5.1",
+        "postcss-loader": "^4.3.0",
+        "postcss-selector-replace": "^1.0.2",
+        "windicss-webpack-plugin": "^1.5.8"
+    },
+    "hooks": {
+        "after:bump": "npm run build"
+    },
+    "release-it": {
+        "github": {
+            "release": true
+        },
+        "npm": {
+            "skipChecks": true
+        }
     }
-  }
 }
