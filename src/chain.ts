@@ -63,7 +63,7 @@ export default (ctx: IPluginContext, config: ITaroPluginTailwindOptions) => {
                     dirs: ["./src"],
                     fileExtensions: ["vue", "jsx", "tsx"],
                 },
-                config: configFilePath,
+                config: path.resolve(configFilePath),
                 ...config,
             },
         ]);
