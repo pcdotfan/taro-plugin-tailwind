@@ -66,6 +66,7 @@ export default class Index extends Component {
             <Text>Want to dig deeper into Tailwind?</Text>
             <Text className='text-cyan-600'>Read the docs &rarr;</Text>
           </View>
+          <transition />
         </View>
         <View>
           <Button className='btn-special'>A Special Button</Button>
