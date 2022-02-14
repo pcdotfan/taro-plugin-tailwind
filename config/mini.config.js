@@ -20,6 +20,7 @@ module.exports = {
         space: false,
         placeholderColor: false,
         placeholderOpacity: false,
+        transitionProperty: false,
     },
     exclude: [/([0-9]{1,}[.][0-9]*)$/],
     theme: {
