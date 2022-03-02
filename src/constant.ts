@@ -1,8 +1,14 @@
 export const HIDDEN_CONFIG_PATH = ".taro-plugin-tailwind";
 export const SUPPORTED_MINI_PLATFORMS = [
     "weapp",
+    "qywx",
     "swan",
     "alipay",
+    "dd",
+    "iot",
+    "xhs",
+    "lark",
+    "kwai",
     "tt",
     "qq",
     "quickapp",
