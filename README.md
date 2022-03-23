@@ -2,8 +2,9 @@
 
 Taro 接入 windicss / tailwindcss 插件，支持小程序 / H5，React Native 暂未测试。
 
-> `1.1.x` 及之后版本使用 [windicss](https://windicss.org/)，`1.0.x（不再维护）` 版本使用 [tailwindcss](https://tailwindcss.com/)，相关问题请自行查阅对应文档。
-> `1.2.x` 仅支持 Taro 3.3 及以上版本，其它版本请自行降级。
+`1.1.x` 及之后版本使用 [windicss](https://windicss.org/)，`1.0.x（不再维护）` 版本使用 [tailwindcss](https://tailwindcss.com/)，相关问题请自行查阅对应文档。
+
+`1.2.x` 仅支持 Taro 3.3 及以上版本，其它版本请自行降级。
 
 ## 安装
 
@@ -94,4 +95,4 @@ A：根据所使用的版本选择安装 [Windi CSS Intellisense](https://market
 
 **Q：保存后新样式没有生效？**
 
-A：请暂时设置 `NODE_ENV` 为 `production` 解决此问题，例：`NODE_ENV=production npm run build:weapp -- --watch`，具体参见示例。
+A：请暂时设置 `NODE_ENV` 为 `production` 解决此问题，例：`NODE_ENV=production npm run build:weapp -- --watch`，具体参见[示例](https://github.com/pcdotfan/taro-plugin-tailwind/tree/main/example)。
