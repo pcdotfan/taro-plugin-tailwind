@@ -85,7 +85,7 @@ import 'windi.css';
 
 配置文件中 `separator` 也设置为 `_`（[configuration#separator](https://tailwindcss.com/docs/configuration#separator)）并且 `preflight` 选项应该始终保持关闭，不加载 [modern-normalize](https://github.com/sindresorhus/modern-normalize)。
 
-此外，部分小程序平台由于所支持的选择器非常有限（如微信小程序，详见 [WXSS | 微信开放文档](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html)），不能使用 `windicss / tailwindcss` 的某些特性（如 `Attributify Mode`、`space-*` 等），并非插件问题。
+此外，部分小程序平台由于所支持的选择器非常有限（如微信小程序，详见 [WXSS | 微信开放文档](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html)），不能使用 `windicss / tailwindcss` 的某些特性（如 `Attributify Mode`、`space-*` 等），并非插件问题，有此类需求可考虑使用其它优秀方案：[mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind)。
 
 ## 常见问题
 
