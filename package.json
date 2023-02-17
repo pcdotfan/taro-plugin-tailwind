@@ -52,7 +52,8 @@
   },
   "release-it": {
     "github": {
-      "release": true
+      "release": true,
+      "web": true
     },
     "npm": {
       "skipChecks": true
