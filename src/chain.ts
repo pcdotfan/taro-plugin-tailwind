@@ -1,5 +1,4 @@
-import { IPluginContext } from "@tarojs/service";
-import { ITaroPluginTailwindOptions } from "index";
+import { IPluginContext, ITaroPluginTailwindOptions } from "index";
 import {
   HIDDEN_CONFIG_PATH,
   CURRENT_PLATFORM,
