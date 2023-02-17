@@ -43,10 +43,11 @@
     "npm-install-webpack-plugin": "^4.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "taro-plugin-tailwind": "file:../dist/index.js"
+    "taro-plugin-tailwind": "^1.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
     "@tarojs/mini-runner": "3.6.1",
     "@tarojs/plugin-framework-react": "^3.6.1",
     "@tarojs/webpack-runner": "3.6.1",
@@ -59,8 +60,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "stylelint": "15.1.0",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
-    "react-refresh": "^0.14.0"
+    "react-refresh": "^0.14.0",
+    "stylelint": "15.1.0"
   }
 }
