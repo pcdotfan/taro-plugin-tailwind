@@ -2,8 +2,6 @@
 
 Taro 接入 tailwindcss 插件，支持大多数小程序（已测试微信、支付宝、百度小程序） / H5，React Native 暂未测试。
 
-`1.3.x` 仅支持 Taro 3.5 及以上版本（使用 `webpack4` 模式），`1.1.x` 及之后版本使用 [windicss](https://windicss.org/)，相关问题请自行查阅对应文档。
-
 ## 安装
 
 在 Taro 项目根目录下安装
@@ -18,7 +16,7 @@ $ yarn add -D taro-plugin-tailwind
 
 ### 引入插件
 
-请确保 Taro CLI 已升级至 Taro 3 的最新版本，确保 `taro-plugin-tailwind` 版本在 `v1.3.0` 及以上。
+请确保 Taro CLI 已升级至 Taro 3 的最新版本（3.5+），确保 `taro-plugin-tailwind` 版本在 `v1.3.0` 及以上。
 
 修改项目 `config/index.js` 中的 `plugins` 配置如下：
 
