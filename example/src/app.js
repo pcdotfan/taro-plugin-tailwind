@@ -1,8 +1,4 @@
 import { Component } from "react";
-import "windi.css";
-// import "windi-base.css";
-// import "windi-components.css";
-// import "windi-utilities.css";
 import "./app.css";
 
 class App extends Component {
