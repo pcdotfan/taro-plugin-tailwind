@@ -1,3 +1,3 @@
-import { UserOptions } from '@windicss/plugin-utils';
+import type { Config } from "tailwindcss/types/config";
 
-export type ITaroPluginTailwindOptions = UserOptions;
+export type ITaroPluginTailwindOptions = Config;
