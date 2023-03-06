@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/**/*.{js,tx,tsx,jsx}"],
+  content: ["./src/**/*.{js,tx,tsx,jsx,vue}"],
   prefixer: false,
   compile: false,
   globalUtility: false,
