@@ -6,7 +6,7 @@ import {
   SUPPORTED_MINI_PLATFORMS,
 } from "./constant";
 import { existsSync, copySync } from "fs-extra";
-import path from "path";
+import * as path from "path";
 
 const getConfigPath = (platform) =>
   `${HIDDEN_CONFIG_PATH}/${platform}.config.js`;
