@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-special {
+    @apply mt-10 bg-cyan-500 text-white rounded-md leading-tight py-3 px-2 shadow-md font-normal text-base;
+}

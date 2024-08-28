@@ -1,19 +1,17 @@
-import { Component } from "react";
-import "./app.css";
 
-class App extends Component {
-  componentDidMount() {}
+import { useLaunch } from '@tarojs/taro'
 
-  componentDidShow() {}
+import './app.css'
 
-  componentDidHide() {}
+function App({ children }) {
+  useLaunch(() => {
+    console.log('App launched.')
+  })
 
-  componentDidCatchError() {}
-
-  // this.props.children 是将要会渲染的页面
-  render() {
-    return this.props.children;
-  }
+  // children 是将要会渲染的页面
+  return children
 }
+  
 
-export default App;
+
+export default App
